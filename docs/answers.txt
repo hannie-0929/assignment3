@@ -1,0 +1,119 @@
+Answers.txt
+Completed git labs tutorials: 10/23/2025
+Github account created: 10/15/2025
+
+1.
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ ls
+Bicycle.cpp  Car.cpp  PoweredVehicle.cpp  README.md    Vehicle.h
+Bicycle.h    Car.h    PoweredVehicle.h    Vehicle.cpp  main.cpp
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ mkdir docs
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git status > docs/status.txt
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git add docs/status.txt
+warning: in the working copy of 'docs/status.txt', LF will be replaced by CRLF t
+he next time Git touches it
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git commit -m "Add git status to docs/status.txt"
+[master 8a99025] Add git status to docs/status.txt
+ 1 file changed, 9 insertions(+)
+ create mode 100644 docs/status.txt
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 774 bytes | 774.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/hannie-0929/assignment3.git
+   f4975e5..8a99025  master -> master
+
+Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$
+
+
+2. 9
+3. $ git log --all -- README.md
+commit d4ccaa72707d658ac59ea81cea8d5a16fdc2214f
+Author: hannie-0929 <hannahlt0929@gmail.com>
+Date:   Thu Oct 23 18:50:12 2025 -0400
+
+    Updated readme file to contain student info
+
+4. Branches are used so multiple developers can work on a project simultaneously.
+Branches can also be used to store code in the cloud in the case of hard drives being corrupted and losing the local storage of code.
+
+5. The log shows the history of commits, while status shows if your files have been modified without a commit or push.
+
+6. $ git log Vehicle.h
+commit 03106e92a1e36708334c69dd071088c6d0937b1d
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 11 16:58:59 2019 -0400
+
+    -> Declared the trivial destructors for all classes
+    -> Fully formatted toString methods for all classes
+    -> Added test cases in the main method for testing the implementations
+    -> Added validation on value for engine sizes in the  Car class
+
+commit f9cd890b3f89fbe5920a1fdf7da34ee915ba27b9
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:42:39 2019 -0400
+
+    -> Partial implementation of PoweredVehicle and Car
+    -> Definition of virtual functions
+
+commit f9c24b027e6275ff6a1911241014c44971b4e8d0
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:04:36 2019 -0400
+
+    Refactored Vehicle class to separate definition and declarations
+    Added mileageEstimate abstract method to Vehicle
+    Implemented the Bicycle class
+
+7. Hanna Bug@DESKTOP-F5GEEQ5 MINGW64 ~/documents/github/assignment3 (master)
+$ git log --grep="file"
+commit 356de5a051ea4650e128d463ec89902869437af8 (HEAD -> master, origin/master,
+origin/HEAD)
+Author: hannie-0929 <hannahlt0929@gmail.com>
+Date:   Thu Oct 23 19:11:29 2025 -0400
+
+    Added empty file answers.txt
+
+commit d4ccaa72707d658ac59ea81cea8d5a16fdc2214f
+Author: hannie-0929 <hannahlt0929@gmail.com>
+Date:   Thu Oct 23 18:50:12 2025 -0400
+
+    Updated readme file to contain student info
+
+commit f4975e5d56ff331762b318bfd12c5236e0299f25 (upstream/master, upstream/HEAD)
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 25 18:33:08 2019 -0400
+
+    -> Adding an empty README.md file
+8. I. Inheritance allows a class to use the same properties and methods as another class, by "inheriting" these.
+II.Polymorphism allows a class to override the objects in the base class.
+III. Encapsulation lets you restrict access to some of the classes objects by making them private. This allows controlled access to only objects that are public.
+
+9. The integration method uses multiple repositories. This allows for changes to be made on the public repos, before commiting them to the "blessed repository." The dictator and lieutenants workflow utilizes one central repo, that only the dictator can push to. Everyone has access to pull from it, but their changes
+have to be pushed by the dictator. The developers have to push their changes into the lieutenant repository, where the dictator can then make the push into the blessed repository. 
+
+10. A team of 100 developers would benefit from this dictator workflow because their changes would have to be pushed by the dictator. You would not have to worry about the repository being tarnished by another developer, because their changes will not be pushed on their own. They will have to go through
+the dictator before being pushed, which will mitigate errors. This can also lessen the chances of malicious code being pushed into the blessed repository, as not every developer will have access.
